@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HET | Home</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header class="header">
+        <nav class="nav-container">
+            <div class="logo"></div>
+            <ul class="nav-menu">
+                <li><a href="#tours">Tours</a></li>
+                <li><a href="#vehicles">Vehicles</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <div class="nav-actions">
+                <div class="language-selector">
+                    <select id="languageSelect">
+                        <option value="en">🇺🇸 English</option>
+                        <option value="de">🇩🇪 Deutsch</option>
+                        <option value="ar">🇪🇬 العربية</option>
+                    </select>
+                </div>
+                <button class="call-btn" onclick="window.location.href='tel:+20123456789'">Call Now</button>
+            </div>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Discover Egypt's Wonders</h1>
+            <p>Luxury tours from Hurghada with professional drivers speaking English, German & Arabic</p>
+            <div class="hero-buttons">
+                <button class="btn-primary" onclick="scrollToSection('tours')">Book Your Tour</button>
+                <button class="btn-secondary" onclick="scrollToSection('tours')">Explore Tours</button>
+            </div>
+        </div>
+    </section>
+
+    <section id="tours" class="tours-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Featured Tours</h2>
+                <p>Explore Egypt's most iconic destinations with our carefully crafted tour packages</p>
+            </div>
+
+            <div class="tour-tabs">
+                <div class="tour-tab active" data-tab="all">All Tours</div>
+                <div class="tour-tab" data-tab="day">Day Tours</div>
+                <div class="tour-tab" data-tab="multi">Multi-Day Tours</div>
+            </div>
+
+            <div class="tours-grid" id="toursGrid">
+                <div class="tour-card" data-tour-type="day">
+                    <div class="tour-image">🏛️ Ancient Wonders</div>
+                    <div class="tour-content">
+                        <span class="tour-badge">Day Tour</span>
+                        <div class="tour-rating">
+                            <span class="stars">★★★★★</span>
+                            <span>4.9</span>
+                        </div>
+                        <h3 class="tour-title">Luxor Valley of Kings Day Trip</h3>
+                        <p class="tour-description">Visit the magnificent tombs of ancient pharaohs, Karnak Temple, and
+                            Queen Hatshepsut Temple with expert guide.</p>
+                        <div class="tour-footer">
+                            <span class="tour-price">$85</span>
+                        </div>
+                        <a href="#"><button class="book-btn">Book Now</button></a>
+                    </div>
+                </div>
+
+                <div class="tour-card" data-tour-type="multi">
+                    <div class="tour-image">🏺 Cairo Explorer</div>
+                    <div class="tour-content">
+                        <span class="tour-badge">3 Days</span>
+                        <div class="tour-rating">
+                            <span class="stars">★★★★★</span>
+                            <span>4.8</span>
+                        </div>
+                        <h3 class="tour-title">Cairo & Pyramids Explorer</h3>
+                        <p class="tour-description">3-day adventure to Cairo, Giza Pyramids, Egyptian Museum, and
+                            Islamic Cairo with luxury accommodation.</p>
+                        <div class="tour-footer">
+                            <span class="tour-price">$285</span>
+                        </div>
+                        <a href="#"><button class="book-btn">Book Now</button></a>
+                    </div>
+                </div>
+
+                <div class="tour-card" data-tour-type="day">
+                    <div class="tour-image">🏖️ Desert Adventure</div>
+                    <div class="tour-content">
+                        <span class="tour-badge">Day Tour</span>
+                        <div class="tour-rating">
+                            <span class="stars">★★★★★</span>
+                            <span>4.7</span>
+                        </div>
+                        <h3 class="tour-title">Eastern Desert Safari</h3>
+                        <p class="tour-description">Thrilling 4x4 desert adventure with Bedouin culture experience,
+                            camel riding, and traditional dinner.</p>
+                        <div class="tour-footer">
+                            <span class="tour-price">$65</span>
+                        </div>
+                        <a href="#"><button class="book-btn">Book Now</button></a>
+                    </div>
+                </div>
+
+                <div class="tour-card" data-tour-type="day">
+                    <div class="tour-image">🌊 Red Sea</div>
+                    <div class="tour-content">
+                        <span class="tour-badge">Day Tour</span>
+                        <div class="tour-rating">
+                            <span class="stars">★★★★★</span>
+                            <span>4.9</span>
+                        </div>
+                        <h3 class="tour-title">Red Sea Snorkeling Trip</h3>
+                        <p class="tour-description">Discover vibrant coral reefs and marine life in the crystal-clear
+                            waters of the Red Sea with equipment included.</p>
+                        <div class="tour-footer">
+                            <span class="tour-price">$45</span>
+                        </div>
+                        <a href="#"><button class="book-btn">Book Now</button></a>
+                    </div>
+                </div>
+
+                <div class="tour-card" data-tour-type="multi">
+                    <div class="tour-image">🏛️ Aswan Temple</div>
+                    <div class="tour-content">
+                        <span class="tour-badge">2 Days</span>
+                        <div class="tour-rating">
+                            <span class="stars">★★★★★</span>
+                            <span>4.8</span>
+                        </div>
+                        <h3 class="tour-title">Aswan & Abu Simbel</h3>
+                        <p class="tour-description">2-day journey to Aswan's highlights including Abu Simbel temples,
+                            Philae Temple, and Nile felucca ride.</p>
+                        <div class="tour-footer">
+                            <span class="tour-price">$220</span>
+                        </div>
+                        <a href="#"><button class="book-btn">Book Now</button></a>
+                    </div>
+                </div>
+
+                <div class="tour-card" data-tour-type="day">
+                    <div class="tour-image">🐪 Bedouin Culture</div>
+                    <div class="tour-content">
+                        <span class="tour-badge">Day Tour</span>
+                        <div class="tour-rating">
+                            <span class="stars">★★★★☆</span>
+                            <span>4.6</span>
+                        </div>
+                        <h3 class="tour-title">Bedouin Village Experience</h3>
+                        <p class="tour-description">Authentic cultural experience with traditional Bedouin hospitality,
+                            local cuisine, and stargazing in the desert.</p>
+                        <div class="tour-footer">
+                            <span class="tour-price">$55</span>
+                        </div>
+                        <a href="#"><button class="book-btn">Book Now</button></a>
+                    </div>
+                </div>
+
+                <div class="tour-card" data-tour-type="multi">
+                    <div class="tour-image">🏛️ Ancient Wonders</div>
+                    <div class="tour-content">
+                        <span class="tour-badge">4 Days</span>
+                        <div class="tour-rating">
+                            <span class="stars">★★★★★</span>
+                            <span>4.9</span>
+                        </div>
+                        <h3 class="tour-title">Grand Egypt Explorer</h3>
+                        <p class="tour-description">4-day comprehensive tour covering Cairo, Luxor, and Aswan with all
+                            major attractions and luxury accommodations.</p>
+                        <div class="tour-footer">
+                            <span class="tour-price">$420</span>
+                        </div>
+                        <a href="#"><button class="book-btn">Book Now</button></a>
+                    </div>
+                </div>
+
+                <div class="tour-card" data-tour-type="day">
+                    <div class="tour-image">🏛️ Temple Complex</div>
+                    <div class="tour-content">
+                        <span class="tour-badge">Day Tour</span>
+                        <div class="tour-rating">
+                            <span class="stars">★★★★★</span>
+                            <span>4.8</span>
+                        </div>
+                        <h3 class="tour-title">Dendera & Abydos Temples</h3>
+                        <p class="tour-description">Explore the beautifully preserved temples of Dendera and Abydos with
+                            their incredible ancient artwork and hieroglyphs.</p>
+                        <div class="tour-footer">
+                            <span class="tour-price">$95</span>
+                        </div>
+                        <a href="#"><button class="book-btn">Book Now</button></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="vehicles" class="vehicles-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Our Vehicles</h2>
+                <p>Travel in comfort and style with our fleet of luxury vehicles</p>
+            </div>
+
+            <div class="vehicles-grid">
+                <div class="vehicle-card">
+                    <img src="https://placehold.co/600x400" alt="🚗Luxury Sedan">
+                    <h3>Luxury Sedan</h3>
+                    <p>Spacious and comfortable for up to 4 passengers</p>
+                </div>
+                <div class="vehicle-card">
+                    <img src="https://placehold.co/600x400" alt="🚗Minivan">
+                    <h3>Minivan</h3>
+                    <p>Perfect for families or small groups, seats up to 8</p>
+                </div>
+                <div class="vehicle-card">
+                    <img src="https://placehold.co/600x400" alt="🚗SUV">
+                    <h3>SUV</h3>
+                    <p>Ideal for desert tours, seats up to 6 passengers</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="drivers" class="drivers-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Professional Multilingual Drivers</h2>
+                <p>Our drivers are not just skilled behind the wheel, but also fluent in multiple languages to enhance
+                    your travel experience.</p>
+            </div>
+            <div class="drivers-grid">
+                <div class="driver-card">
+                    <div class="icon-container english-icon">
+                        <img src="images/usa.png" alt="">
+                    </div>
+                    <h3 class="driver-title">English Speaking</h3>
+                    <p class="driver-description">
+                        Our drivers are fluent in English, ensuring clear communication and a better understanding of
+                        the local culture and history.
+                    </p>
+                </div>
+
+                <div class="driver-card">
+                    <div class="icon-container german-icon">
+                        <img src="images/germany.png" alt="">
+                    </div>
+                    <h3 class="driver-title">Fließendes Deutsch</h3>
+                    <p class="driver-description">
+                        Deutschsprachige Fahrer, die Ihnen eine reibungslose Kommunikation und tiefes ein Verständnis
+                        der Sehenswürdigkeiten bieten.
+                    </p>
+                </div>
+
+                <div class="driver-card">
+                    <div class="icon-container arabic-icon">
+                        <img src="images/egypt.png" alt="">
+                    </div>
+                    <h3 class="driver-title">عربي أصلي</h3>
+                    <p class="driver-description">
+                        سائقون يتحدثون العربية بطلاقة، مما يضمن لك تجربة سفر سلسة وممتعة مع فهم عميق للثقافة
+                        المحلية.
+                    </p>
+                </div>
+            </div>
+
+        </div>
+    </section>
+    <section id="about" class="about-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>About Us</h2>
+                <p>Hurghada Elite Tours is dedicated to providing unforgettable travel experiences in Egypt with a focus
+                    on luxury, comfort, and cultural immersion.</p><br>
+                <p>With years of experience in the tourism industry, we pride ourselves on our exceptional service,
+                    knowledgeable guides, and a wide range of tours that cater to every traveler's interests.</p>
+            </div>
+        </div>
+    </section>
+    <section id="contact" class="contact-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Contact Us</h2>
+                <p>Have questions? We're here to help plan your perfect Egyptian adventure</p>
+            </div>
+
+            <div class="contact-content">
+                <!-- Contact Methods -->
+                <div class="contact-methods">
+
+                    <div class="contact-method whatsapp">
+                        <div class="contact-method-icon">📱</div>
+                        <h3>WhatsApp</h3>
+                        <p>Quick messaging support</p>
+                        <a href="https://wa.me/201234567890" class="contact-method-btn">Message Us</a>
+                    </div>
+
+                    <div class="contact-method email">
+                        <div class="contact-method-icon">📧</div>
+                        <h3>Email Us</h3>
+                        <p>Detailed inquiries welcome</p>
+                        <a href="mailto:info@hurghadaelitetours.com" class="contact-method-btn">Send Email</a>
+                    </div>
+                </div>
+
+                <form id="contactForm" class="contact-form" action="https://api.web3forms.com/submit" method="POST">
+                    <!-- W3Forms Access Key - Replace with your actual access key -->
+                    <input type="hidden" name="access_key" value="YOUR_ACCESS_KEY_HERE">
+
+                    <!-- Optional: Redirect URL after successful submission -->
+                    <input type="hidden" name="redirect" value="https://web3forms.com/success">
+
+                    <!-- Optional: Custom subject line -->
+                    <input type="hidden" name="subject" value="New Contact Form Submission from Hurghada Elite Tours">
+
+                    <!-- Honeypot field for spam protection -->
+                    <input type="checkbox" name="botcheck" id="" style="display: none;">
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="name">Name *</label>
+                            <input type="text" id="name" name="name" placeholder="Your name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email *</label>
+                            <input type="email" id="email" name="email" placeholder="your@email.com" required>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="inquiry_type">Subject</label>
+                        <select id="inquiry_type" name="inquiry_type">
+                            <option value="">Select subject</option>
+                            <option value="booking">Booking Inquiry</option>
+                            <option value="custom">Custom Tour</option>
+                            <option value="group">Group Booking</option>
+                            <option value="general">General Question</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="message">Message *</label>
+                        <textarea id="message" name="message"
+                            placeholder="Tell us about your travel plans or ask any questions..." required></textarea>
+                    </div>
+
+                    <button type="submit" class="submit-btn">✈️ Send Message</button>
+                </form>
+            </div>
+        </div>
+    </section>
+    <footer class="footer">
+        <div class="container">
+            <h3>&copy; 2025 Hurghada Elite Tours. All rights reserved.</h3>
+            <div class="social-links">
+                <a href="#"><img src="images/facebook.png" alt="Facebook"></a>
+                <a href="#"><img src="images/instagram.png" alt="Instagram"></a>
+                <a href="#"><img src="images/twitter.png" alt="Twitter"></a>
+            </div>
+        </div>
+
+        <div class="container">
+            <h3>Quick Links</h3>
+            <ul class="quick-links">
+                <li><a href="#tours">Tours</a></li>
+                <li><a href="#vehicles">Vehicles</a></li>
+                <li><a href="impressum.html">Impressum</a></li>
+                <li><a href="credits.html">Credits</a></li>
+            </ul>
+        </div>
+
+        <div class="container">
+            <h3>Contact Info</h3>
+            <div class="address-info">
+                <p>123 Red Sea Street</p>
+                <p>Hurghada, Egypt</p>
+                <p>Phone: +20 123 456 7890</p>
+                <p>Email: info@hurghadaelitetours.com</p>
+            </div>
+        </div>
+    </footer>
+    <div class="floating-call" onclick="window.location.href='tel:+20123456789'">
+        📞
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
