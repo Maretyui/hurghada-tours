@@ -1,0 +1,931 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    color: #333;
+}
+
+.header {
+    background: #fff;
+    padding: 1rem 0;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+}
+
+.nav-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 1rem;
+}
+
+.logo {
+    background-image: url("images/hurghada-logo6x4.png");
+    background-position: center;
+    background-size: cover;
+    height: 50px;
+    width: 102px;
+    flex-shrink: 0;
+}
+
+.nav-menu {
+    display: flex;
+    list-style: none;
+    gap: 1.5rem;
+}
+
+.nav-menu a {
+    text-decoration: none;
+    color: #333;
+    font-weight: 500;
+    transition: color 0.3s;
+    font-size: 0.9rem;
+}
+
+.nav-menu a:hover {
+    color: #2c5a7a;
+}
+
+.nav-actions {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.language-selector {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.language-selector select {
+    padding: 0.4rem 0.8rem;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    background: white;
+    font-size: 0.9rem;
+}
+
+.call-btn {
+    background: #f1c40f;
+    color: #333;
+    padding: 0.6rem 1.2rem;
+    border: none;
+    border-radius: 25px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s;
+    font-size: 0.9rem;
+    white-space: nowrap;
+}
+
+.call-btn:hover {
+    background: #e67e22;
+    color: white;
+}
+
+.credits-section {
+    padding: 80px 0;
+    background: #f8f9fa;
+}
+
+.hero {
+    background: linear-gradient(135deg, #2c5a7a, #34495e);
+    background-image: url("images/background.jpg");
+    background-size: cover;
+    background-position: center;
+    color: white;
+    padding: 120px 0 80px;
+    text-align: center;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.hero-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
+.hero-content h1 {
+    font-size: clamp(2rem, 5vw, 3.5rem);
+    margin-bottom: 1rem;
+    font-weight: 700;
+}
+
+.hero-content p {
+    font-size: clamp(1rem, 2.5vw, 1.2rem);
+    margin-bottom: 2rem;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.btn-primary {
+    background: #f1c40f;
+    color: #333;
+    padding: 1rem 2rem;
+    border: none;
+    border-radius: 25px;
+    font-size: clamp(1rem, 2vw, 1.1rem);
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s;
+    text-decoration: none;
+    display: inline-block;
+}
+
+.btn-primary:hover {
+    background: #e67e22;
+    color: white;
+}
+
+.btn-secondary {
+    background: transparent;
+    color: white;
+    border: 2px solid white;
+    padding: 1rem 2rem;
+    border-radius: 25px;
+    font-size: clamp(1rem, 2vw, 1.1rem);
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s;
+    text-decoration: none;
+    display: inline-block;
+}
+
+.btn-secondary:hover {
+    background: white;
+    color: #2c5a7a;
+}
+
+.tours-section {
+    padding: 80px 0;
+    background: #f8f9fa;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
+.section-header {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.section-header h2 {
+    font-size: clamp(2rem, 4vw, 2.5rem);
+    color: #2c5a7a;
+    margin-bottom: 1rem;
+}
+
+.section-header p {
+    font-size: clamp(1rem, 2vw, 1.1rem);
+    color: #666;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.tour-tabs {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 3rem;
+    flex-wrap: wrap;
+}
+
+.tour-tab {
+    background: white;
+    border: 2px solid #ddd;
+    padding: 0.8rem 1.5rem;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: all 0.3s;
+    font-weight: 500;
+    font-size: 0.9rem;
+    text-align: center;
+    min-width: 120px;
+}
+
+.tour-tab:hover {
+    border-color: #2c5a7a;
+    color: #2c5a7a;
+}
+
+.tour-tab.active {
+    background: #2c5a7a;
+    color: white;
+    border-color: #2c5a7a;
+}
+
+.tours-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+}
+
+.tour-card {
+    background: white;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s;
+    opacity: 1;
+    transform: scale(1);
+    height: fit-content;
+}
+
+.tour-card:hover {
+    transform: translateY(-5px);
+}
+
+.tour-card.hidden {
+    opacity: 0;
+    transform: scale(0.8);
+    pointer-events: none;
+    position: absolute;
+    z-index: -1;
+}
+
+.tour-image {
+    width: 100%;
+    height: 200px;
+    background: linear-gradient(45deg, #34495e, #2c5a7a);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 1.2rem;
+}
+
+.tour-content {
+    padding: 1.5rem;
+}
+
+.tour-badge {
+    display: inline-block;
+    background: #3498db;
+    color: white;
+    padding: 0.3rem 0.8rem;
+    border-radius: 15px;
+    font-size: 0.8rem;
+    margin-bottom: 1rem;
+}
+
+.tour-title {
+    font-size: 1.3rem;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+    color: #2c5a7a;
+}
+
+.tour-description {
+    color: #666;
+    margin-bottom: 1rem;
+    line-height: 1.5;
+}
+
+.tour-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+    gap: 1rem;
+}
+
+.tour-price {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #2c5a7a;
+}
+
+.tour-rating {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.9rem;
+}
+
+.vehicles-section {
+    padding: 80px 0;
+    background: white;
+}
+
+.vehicles-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+}
+
+.vehicle-card {
+    background: white;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s;
+    height: fit-content;
+}
+
+.vehicle-card:hover {
+    transform: translateY(-5px);
+}
+
+.vehicle-card h3 {
+    font-size: 1.3rem;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+    color: #2c5a7a;
+    text-align: center;
+    padding: 1rem 1rem 0;
+}
+
+.vehicle-card p {
+    padding: 0 1rem 1rem;
+    color: #666;
+}
+
+.vehicle-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.drivers-section {
+    padding: 80px 0;
+    background: #f8f9fa;
+}
+
+.drivers-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+    align-items: start;
+}
+
+.driver-card {
+    background: white;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s;
+    padding: 30px 20px;
+    text-align: center;
+}
+
+.driver-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+}
+
+.icon-container {
+    width: 80px;
+    height: 80px;
+    margin: 0 auto 25px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    font-weight: bold;
+    color: white;
+    position: relative;
+    overflow: hidden;
+}
+
+.english-icon {
+    background: linear-gradient(135deg, #4A90E2, #357ABD);
+}
+
+.german-icon {
+    background: linear-gradient(135deg, #E85D75, #D63384);
+}
+
+.arabic-icon {
+    background: linear-gradient(135deg, #28A745, #20C997);
+}
+
+.driver-title {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #1a1a1a;
+    margin-bottom: 15px;
+}
+
+.driver-description {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: #6c757d;
+    max-width: 280px;
+    margin: 0 auto;
+}
+
+.about-section {
+    padding: 80px 0;
+    background: white;
+}
+
+.about-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+    text-align: center;
+}
+
+.contact-section {
+    padding: 80px 0;
+    background: #f8f9fa;
+}
+
+.contact-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: start;
+}
+
+.contact-methods {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.contact-method {
+    border-radius: 12px;
+    padding: 2rem;
+    color: white;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+}
+
+.contact-method:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+}
+
+.contact-method.whatsapp {
+    background: linear-gradient(135deg, #25d366, #128c7e);
+}
+
+.contact-method.email {
+    background: linear-gradient(135deg, #f1c40f, #e67e22);
+}
+
+.contact-method-icon {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+.contact-method h3 {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+}
+
+.contact-method p {
+    font-size: 1rem;
+    margin-bottom: 1.5rem;
+    opacity: 0.9;
+}
+
+.contact-method-btn {
+    background: rgba(255, 255, 255, 0.2);
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    color: white;
+    padding: 0.8rem 2rem;
+    border-radius: 25px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    display: inline-block;
+}
+
+.contact-method-btn:hover {
+    background: rgba(255, 255, 255, 0.3);
+    border-color: rgba(255, 255, 255, 0.5);
+    transform: scale(1.05);
+}
+
+.contact-form {
+    background: white;
+    padding: 2.5rem;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+    color: #2c3e50;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: 1rem;
+    border: 2px solid #e9ecef;
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: border-color 0.3s ease;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: #3498db;
+}
+
+.form-group textarea {
+    resize: vertical;
+    min-height: 120px;
+}
+
+.form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+}
+
+.submit-btn {
+    background: linear-gradient(135deg, #2c5aa0, #1a4480);
+    color: white;
+    border: none;
+    padding: 1rem 2rem;
+    border-radius: 25px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    width: 100%;
+}
+
+.submit-btn:hover {
+    background: linear-gradient(135deg, #1a4480, #2c5aa0);
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(44, 90, 160, 0.3);
+}
+
+footer {
+    background: #2c5a7a;
+    color: white;
+    padding: 2rem 0;
+    text-align: center;
+    position: relative;
+    bottom: 0;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 2rem;
+    margin: 0 auto;
+
+}
+
+footer .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+footer p {
+    margin: 0;
+    font-size: 0.9rem;
+}
+
+footer a {
+    color: #f1c40f;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.social-links {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.social-links a:hover {
+    color: #f1c40f;
+}
+
+.social-links img {
+    width: 34px;
+    height: 34px;
+}
+
+.quick-links {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    margin-top: 1rem;
+    list-style: none;
+    padding: 0;
+}
+
+.address-info {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    margin-top: 1rem;
+}
+
+
+.stars {
+    color: #f1c40f;
+}
+
+.book-btn {
+    background: #f1c40f;
+    color: #333;
+    padding: 0.8rem 1.5rem;
+    border: none;
+    border-radius: 20px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s;
+    width: 100%;
+    font-size: 1rem;
+}
+
+.book-btn:hover {
+    background: #e67e22;
+    color: white;
+}
+
+.floating-call {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    width: 60px;
+    height: 60px;
+    background: #f1c40f;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #333;
+    font-size: 1.5rem;
+    cursor: pointer;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+    transition: all 0.3s;
+}
+
+.floating-call:hover {
+    background: #e67e22;
+    color: white;
+    transform: scale(1.1);
+}
+
+@media (max-width: 480px) {
+    .nav-container {
+        padding: .5rem 0;
+    }
+
+    .logo {
+        height: 40px;
+        width: 81px;
+    }
+
+    .call-btn {
+        padding: 0.5rem 1rem;
+        font-size: 0.8rem;
+    }
+
+    .language-selector select {
+        padding: 0.3rem 0.5rem;
+        font-size: 0.8rem;
+    }
+
+    .hero {
+        padding: 100px 0 60px;
+    }
+
+    .hero-content {
+        padding: .5rem 0;
+    }
+
+    .hero-buttons {
+        flex-direction: column;
+        align-items: center;
+        gap: 0.8rem;
+    }
+
+    .btn-primary,
+    .btn-secondary {
+        width: 100%;
+        max-width: 280px;
+        padding: 0.8rem 1.5rem;
+    }
+
+    .tours-section,
+    .vehicles-section {
+        padding: 60px 0;
+    }
+
+    .tour-tabs {
+        flex-direction: column;
+        align-items: center;
+        gap: 0.8rem;
+    }
+
+    .tour-tab {
+        width: 100%;
+        max-width: 200px;
+    }
+
+    .tours-grid,
+    .vehicles-grid,
+    .drivers-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+
+    .tour-content {
+        padding: 1rem;
+    }
+
+    .tour-footer {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.5rem;
+    }
+
+    .floating-call {
+        width: 50px;
+        height: 50px;
+        bottom: 1rem;
+        right: 1rem;
+        font-size: 1.2rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .nav-menu {
+        display: none;
+    }
+
+    .nav-actions {
+        gap: 0.5rem;
+    }
+
+    .hero {
+        padding: 110px 0 70px;
+    }
+
+    .section-header {
+        margin-bottom: 2rem;
+    }
+
+    .tours-section,
+    .vehicles-section {
+        padding: 70px 0;
+    }
+
+    .drivers-section {
+        padding: 70px 0;
+    }
+
+    .driver-card {
+        padding: 25px 15px;
+    }
+
+    .icon-container {
+        width: 70px;
+        height: 70px;
+        font-size: 1.8rem;
+    }
+
+    .contact-content {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+
+    .form-row {
+        grid-template-columns: 1fr;
+    }
+
+    .contact-method {
+        padding: 1.5rem;
+    }
+
+    footer {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+        padding: 1.5rem 1rem;
+    }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+    .nav-container {
+        padding: 0 1.5rem;
+    }
+
+    .nav-menu {
+        gap: 1.2rem;
+    }
+
+    .hero-content h1 {
+        font-size: 3rem;
+    }
+
+    .tours-grid,
+    .vehicles-grid {
+        grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    }
+
+    .drivers-grid {
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    }
+}
+
+@media (min-width: 1025px) {
+    .nav-container {
+        padding: 0 2rem;
+    }
+
+    .nav-menu {
+        gap: 2rem;
+    }
+
+    .tours-grid,
+    .vehicles-grid {
+        grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    }
+
+    .drivers-grid {
+        grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    }
+}
+
+@media print {
+
+    .header,
+    .floating-call {
+        display: none;
+    }
+
+    .hero {
+        background: none;
+        color: #333;
+        min-height: auto;
+        padding: 2rem 0;
+    }
+
+    .tour-card,
+    .vehicle-card,
+    .driver-card {
+        box-shadow: none;
+        border: 1px solid #ddd;
+    }
+}
+
+@media (prefers-contrast: high) {
+    .hero {
+        background: #000;
+        color: #fff;
+    }
+
+    .tour-card,
+    .vehicle-card,
+    .driver-card {
+        border: 2px solid #333;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    * {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}
