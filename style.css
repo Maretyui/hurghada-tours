@@ -688,11 +688,13 @@ footer a {
     width: 60px;
     height: 60px;
     background: #f1c40f;
+    border: none;
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
     color: #333;
+    font: inherit;
     font-size: 1.5rem;
     cursor: pointer;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
