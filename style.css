@@ -10,6 +10,24 @@ body {
     color: #333;
 }
 
+.skip-link {
+    position: absolute;
+    top: -100px;
+    left: 1rem;
+    background: #f1c40f;
+    color: #333;
+    padding: 0.75rem 1.25rem;
+    border-radius: 4px;
+    font-weight: bold;
+    text-decoration: none;
+    z-index: 2000;
+    transition: top 0.2s;
+}
+
+.skip-link:focus {
+    top: 1rem;
+}
+
 .header {
     background: #fff;
     padding: 1rem 0;
