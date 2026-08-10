@@ -68,7 +68,10 @@ document.getElementById('contactForm').addEventListener('submit', async function
         const result = await response.json();
 
         if (result.success) {
-            window.location.href = 'https://yourdomain.com/thank-you.html';
+            // No dedicated thank-you page exists in this repo yet, so confirm
+            // success in place instead of redirecting to a URL that would 404.
+            submitBtn.textContent = 'Message Sent!';
+            this.reset();
         } else {
             alert('There was an error sending your message. Please try again.');
             submitBtn.textContent = originalText;
