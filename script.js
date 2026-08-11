@@ -5,9 +5,13 @@ document.addEventListener('DOMContentLoaded', function () {
 
     tabs.forEach(tab => {
         tab.addEventListener('click', function () {
-            tabs.forEach(t => t.classList.remove('active'));
+            tabs.forEach(t => {
+                t.classList.remove('active');
+                t.setAttribute('aria-pressed', 'false');
+            });
 
             this.classList.add('active');
+            this.setAttribute('aria-pressed', 'true');
 
             const selectedFilter = this.getAttribute('data-tab');
 
