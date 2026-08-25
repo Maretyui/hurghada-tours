@@ -334,8 +334,9 @@
                     <!-- Optional: Custom subject line -->
                     <input type="hidden" name="subject" value="New Contact Form Submission from Hurghada Elite Tours">
 
-                    <!-- Honeypot field for spam protection -->
-                    <input type="checkbox" name="botcheck" id="" style="display: none;">
+                    <!-- Honeypot field for spam protection - hidden from assistive tech too,
+                         so screen reader/keyboard users never land on a field meant only to trap bots -->
+                    <input type="checkbox" name="botcheck" style="display: none;" aria-hidden="true" tabindex="-1" autocomplete="off">
 
                     <div class="form-row">
                         <div class="form-group">
