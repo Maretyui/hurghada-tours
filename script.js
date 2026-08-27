@@ -76,6 +76,13 @@ document.getElementById('contactForm').addEventListener('submit', async function
             // success in place instead of redirecting to a URL that would 404.
             submitBtn.textContent = 'Message Sent!';
             this.reset();
+            // Without this, the button stayed disabled with "Message Sent!"
+            // forever, so a visitor who wanted to send a second message had
+            // no way to re-enable the form short of reloading the page.
+            setTimeout(() => {
+                submitBtn.textContent = originalText;
+                submitBtn.disabled = false;
+            }, 3000);
         } else {
             alert('There was an error sending your message. Please try again.');
             submitBtn.textContent = originalText;
