@@ -724,6 +724,11 @@ footer a {
     color: white;
 }
 
+.book-btn:focus-visible {
+    outline: 3px solid #2c5a7a;
+    outline-offset: 2px;
+}
+
 .floating-call {
     position: fixed;
     bottom: 2rem;
