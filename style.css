@@ -598,6 +598,13 @@ body {
     border-color: #3498db;
 }
 
+.form-group input:focus-visible,
+.form-group select:focus-visible,
+.form-group textarea:focus-visible {
+    outline: 3px solid #2c5a7a;
+    outline-offset: 2px;
+}
+
 .form-group textarea {
     resize: vertical;
     min-height: 120px;
