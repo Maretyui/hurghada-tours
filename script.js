@@ -96,9 +96,14 @@ document.getElementById('contactForm').addEventListener('submit', async function
 });
 
 document.querySelectorAll('.contact-method').forEach(method => {
-    method.addEventListener('click', function () {
+    method.addEventListener('click', function (e) {
         const btn = this.querySelector('.contact-method-btn');
-        if (btn) {
+        // btn.click() dispatches a real click event that bubbles right back up
+        // to this same listener - without this guard, a click landing on (or
+        // inside) the link itself re-triggers btn.click() over and over until
+        // the call stack overflows, instead of just letting the link's own
+        // native click do its job.
+        if (btn && !e.target.closest('.contact-method-btn')) {
             btn.click();
         }
     });
