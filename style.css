@@ -261,6 +261,11 @@ body {
     color: #2c5a7a;
 }
 
+.tour-tab:focus-visible {
+    outline: 3px solid #2c5a7a;
+    outline-offset: 2px;
+}
+
 .tour-tab.active {
     background: #2c5a7a;
     color: white;
