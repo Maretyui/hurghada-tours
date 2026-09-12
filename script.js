@@ -20,10 +20,13 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 
     function filterTours(filter) {
+        let visibleCount = 0;
+
         tourCards.forEach(card => {
             const tourType = card.getAttribute('data-tour-type');
 
             if (filter === 'all' || tourType === filter) {
+                visibleCount++;
                 card.classList.remove('hidden');
                 setTimeout(() => {
                     card.style.display = 'block';
@@ -37,6 +40,11 @@ document.addEventListener('DOMContentLoaded', function () {
                 }, 300);
             }
         });
+
+        const status = document.getElementById('tour-filter-status');
+        if (status) {
+            status.textContent = `Showing ${visibleCount} tour${visibleCount === 1 ? '' : 's'}.`;
+        }
     }
 });
 
