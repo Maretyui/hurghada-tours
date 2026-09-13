@@ -95,6 +95,7 @@ body {
 }
 
 .call-btn {
+    display: inline-block;
     background: #f1c40f;
     color: #333;
     padding: 0.6rem 1.2rem;
@@ -105,6 +106,7 @@ body {
     transition: all 0.3s;
     font-size: 0.9rem;
     white-space: nowrap;
+    text-decoration: none;
 }
 
 .call-btn:hover {
