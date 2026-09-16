@@ -752,6 +752,7 @@ footer a {
     font: inherit;
     font-size: 1.5rem;
     cursor: pointer;
+    text-decoration: none;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
     z-index: 1000;
     transition: all 0.3s;
