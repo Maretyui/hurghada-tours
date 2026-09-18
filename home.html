@@ -30,7 +30,7 @@
     <header class="header">
         <nav class="nav-container">
             <div class="logo" role="img" aria-label="Hurghada Elite Tours"></div>
-            <ul class="nav-menu">
+            <ul class="nav-menu" id="navMenu">
                 <li><a href="#tours">Tours</a></li>
                 <li><a href="#vehicles">Vehicles</a></li>
                 <li><a href="#about">About</a></li>
@@ -45,6 +45,22 @@
                     </select>
                 </div>
                 <a href="tel:+20123456789" class="call-btn">Call Now</a>
+                <!-- Below 768px .nav-menu is display:none with no other way to
+                     reach it, so Tours/Vehicles/About/Contact become totally
+                     unreachable from the header on mobile. This button toggles
+                     it back on via the .nav-menu-open class in script.js. -->
+                <button
+                    type="button"
+                    class="nav-toggle"
+                    id="navToggle"
+                    aria-expanded="false"
+                    aria-controls="navMenu"
+                    aria-label="Toggle navigation menu"
+                >
+                    <span aria-hidden="true"></span>
+                    <span aria-hidden="true"></span>
+                    <span aria-hidden="true"></span>
+                </button>
             </div>
         </nav>
     </header>

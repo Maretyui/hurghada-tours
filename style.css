@@ -114,6 +114,29 @@ body {
     color: white;
 }
 
+/* Hidden by default (desktop) - only shown by the 768px media query below,
+   since it exists purely to reach .nav-menu once that's hidden on mobile. */
+.nav-toggle {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    gap: 5px;
+    width: 32px;
+    height: 32px;
+    padding: 0;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+.nav-toggle span {
+    display: block;
+    width: 100%;
+    height: 2px;
+    background: #333;
+    border-radius: 1px;
+}
+
 .credits-section {
     padding: 80px 0;
     background: #f8f9fa;
@@ -850,6 +873,30 @@ footer a {
 @media (max-width: 768px) {
     .nav-menu {
         display: none;
+    }
+
+    /* Shown here instead of the .nav-menu-open toggle below, since a plain
+       height/opacity transition on a <ul> whose <li>s are already display:none
+       looks abrupt either way - this keeps the change purely structural. */
+    .nav-menu.nav-menu-open {
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background: white;
+        padding: 1rem 1.5rem;
+        gap: 0.75rem;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .nav-toggle {
+        display: flex;
+    }
+
+    .nav-container {
+        position: relative;
     }
 
     .nav-actions {
