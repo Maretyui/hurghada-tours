@@ -253,6 +253,15 @@ body {
     margin-bottom: 1rem;
 }
 
+/* Impressum/Credits use an <h1> here instead of <h2> - same slot in the
+   layout, so shares the section-header treatment rather than repeating
+   the same inline style on both pages. */
+.section-header h1 {
+    font-size: 3rem;
+    color: rgba(0, 0, 0, 0.677);
+    margin-bottom: 1rem;
+}
+
 .section-header p {
     font-size: clamp(1rem, 2vw, 1.1rem);
     color: #666;
