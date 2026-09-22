@@ -19,6 +19,17 @@ document.addEventListener('DOMContentLoaded', function () {
                 navToggle.setAttribute('aria-expanded', 'false');
             });
         });
+
+        // The toggle button is the only other way to close the menu -
+        // keyboard users had no way to dismiss it without tabbing all the
+        // way through every nav link first.
+        document.addEventListener('keydown', function (e) {
+            if (e.key === 'Escape' && navMenu.classList.contains('nav-menu-open')) {
+                navMenu.classList.remove('nav-menu-open');
+                navToggle.setAttribute('aria-expanded', 'false');
+                navToggle.focus();
+            }
+        });
     }
 
     const tabs = document.querySelectorAll('.tour-tab');
