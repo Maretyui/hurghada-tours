@@ -97,7 +97,12 @@ document.getElementById('contactForm').addEventListener('submit', async function
     e.preventDefault();
 
     const submitBtn = this.querySelector('.submit-btn');
-    const originalText = submitBtn.textContent;
+    // innerHTML, not textContent - the button's default state has a
+    // decorative <span aria-hidden="true"> wrapping the ✈️ icon so screen
+    // readers skip it. Restoring via textContent would flatten that back
+    // into plain text, permanently losing the aria-hidden wrapper the first
+    // time the form gets submitted.
+    const originalHTML = submitBtn.innerHTML;
 
     submitBtn.textContent = 'Sending...';
     submitBtn.disabled = true;
@@ -120,17 +125,17 @@ document.getElementById('contactForm').addEventListener('submit', async function
             // forever, so a visitor who wanted to send a second message had
             // no way to re-enable the form short of reloading the page.
             setTimeout(() => {
-                submitBtn.textContent = originalText;
+                submitBtn.innerHTML = originalHTML;
                 submitBtn.disabled = false;
             }, 3000);
         } else {
             alert('There was an error sending your message. Please try again.');
-            submitBtn.textContent = originalText;
+            submitBtn.innerHTML = originalHTML;
             submitBtn.disabled = false;
         }
     } catch (error) {
         alert('There was an error sending your message. Please try again.');
-        submitBtn.textContent = originalText;
+        submitBtn.innerHTML = originalHTML;
         submitBtn.disabled = false;
     }
 });
