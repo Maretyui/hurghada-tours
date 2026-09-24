@@ -129,6 +129,11 @@ body {
     cursor: pointer;
 }
 
+.nav-toggle:focus-visible {
+    outline: 3px solid #2c5a7a;
+    outline-offset: 2px;
+}
+
 .nav-toggle span {
     display: block;
     width: 100%;
