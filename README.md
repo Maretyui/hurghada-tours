@@ -16,3 +16,7 @@ Landing page for a Hurghada-based tour operator — luxury day and multi-day exc
 - `credits.html` — credits
 - `style.css`, `script.js` — shared styles and behavior
 - `images/` — page assets
+
+## Known limitations
+
+- The language selector (`#languageSelect`) in the header is decorative only — it has no JavaScript wired up yet, so picking Deutsch/العربية doesn't change any page content.
