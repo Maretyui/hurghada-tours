@@ -74,6 +74,18 @@ body {
     color: #2c5a7a;
 }
 
+/* Used on pages with a single nav link and no mobile nav-toggle button
+   (credits.html, impressum.html) - overrides the 768px media query's
+   .nav-menu { display: none; } so that one link stays reachable on mobile
+   with no JS to open it, and reads larger since it's the only item. */
+.nav-menu.nav-menu--single {
+    display: block;
+}
+
+.nav-menu.nav-menu--single a {
+    font-size: 1.5rem;
+}
+
 .nav-actions {
     display: flex;
     align-items: center;
