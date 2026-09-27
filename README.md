@@ -20,3 +20,4 @@ Landing page for a Hurghada-based tour operator — luxury day and multi-day exc
 ## Known limitations
 
 - The language selector (`#languageSelect`) in the header is decorative only — it has no JavaScript wired up yet, so picking Deutsch/العربية doesn't change any page content.
+- Every "Book Now" button on a tour card, and all three footer social icons (Facebook/Instagram/Twitter), are placeholder `href="#"` links with no handler in `script.js` — clicking one just scrolls to the top of the page.
