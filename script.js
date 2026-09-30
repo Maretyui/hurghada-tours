@@ -1,5 +1,12 @@
 
 document.addEventListener('DOMContentLoaded', function () {
+    // Keeps the footer copyright current without needing a yearly edit -
+    // guarded since not every page that loads this script has the span.
+    const copyrightYear = document.getElementById('copyright-year');
+    if (copyrightYear) {
+        copyrightYear.textContent = new Date().getFullYear();
+    }
+
     const navToggle = document.getElementById('navToggle');
     const navMenu = document.getElementById('navMenu');
 

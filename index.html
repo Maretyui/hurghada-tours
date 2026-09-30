@@ -87,9 +87,12 @@
         <a href="home.html" class="btn-continue">Continue</a>
         <p>By clicking "Continue", you agree to the previously mentioned terms and conditions.</p>
         <footer>
-            <p>&copy; 2026 Maretyui. All rights reserved.</p>
+            <p>&copy; <span id="copyright-year">2026</span> Maretyui. All rights reserved.</p>
         </footer>
     </main>
+    <script>
+        document.getElementById('copyright-year').textContent = new Date().getFullYear();
+    </script>
 </body>
 
 </html>
