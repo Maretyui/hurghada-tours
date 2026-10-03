@@ -100,52 +100,60 @@ function scrollToSection(sectionId) {
 
 
 
-document.getElementById('contactForm').addEventListener('submit', async function (e) {
-    e.preventDefault();
+// Guarded like the navToggle/navMenu lookups above - script.js is shared
+// across every page in this site, and only home.html actually has a
+// #contactForm. Without this check, loading this file from any other page
+// would throw on the unguarded getElementById(...).addEventListener() call
+// and silently stop every listener registered after it in this file too.
+const contactForm = document.getElementById('contactForm');
+if (contactForm) {
+    contactForm.addEventListener('submit', async function (e) {
+        e.preventDefault();
 
-    const submitBtn = this.querySelector('.submit-btn');
-    // innerHTML, not textContent - the button's default state has a
-    // decorative <span aria-hidden="true"> wrapping the ✈️ icon so screen
-    // readers skip it. Restoring via textContent would flatten that back
-    // into plain text, permanently losing the aria-hidden wrapper the first
-    // time the form gets submitted.
-    const originalHTML = submitBtn.innerHTML;
+        const submitBtn = this.querySelector('.submit-btn');
+        // innerHTML, not textContent - the button's default state has a
+        // decorative <span aria-hidden="true"> wrapping the ✈️ icon so screen
+        // readers skip it. Restoring via textContent would flatten that back
+        // into plain text, permanently losing the aria-hidden wrapper the first
+        // time the form gets submitted.
+        const originalHTML = submitBtn.innerHTML;
 
-    submitBtn.textContent = 'Sending...';
-    submitBtn.disabled = true;
+        submitBtn.textContent = 'Sending...';
+        submitBtn.disabled = true;
 
-    try {
-        const formData = new FormData(this);
-        const response = await fetch('https://api.web3forms.com/submit', {
-            method: 'POST',
-            body: formData
-        });
+        try {
+            const formData = new FormData(this);
+            const response = await fetch('https://api.web3forms.com/submit', {
+                method: 'POST',
+                body: formData
+            });
 
-        const result = await response.json();
+            const result = await response.json();
 
-        if (result.success) {
-            // No dedicated thank-you page exists in this repo yet, so confirm
-            // success in place instead of redirecting to a URL that would 404.
-            submitBtn.textContent = 'Message Sent!';
-            this.reset();
-            // Without this, the button stayed disabled with "Message Sent!"
-            // forever, so a visitor who wanted to send a second message had
-            // no way to re-enable the form short of reloading the page.
-            setTimeout(() => {
+            if (result.success) {
+                // No dedicated thank-you page exists in this repo yet, so confirm
+                // success in place instead of redirecting to a URL that would 404.
+                submitBtn.textContent = 'Message Sent!';
+                this.reset();
+                // Without this, the button stayed disabled with "Message Sent!"
+                // forever, so a visitor who wanted to send a second message had
+                // no way to re-enable the form short of reloading the page.
+                setTimeout(() => {
+                    submitBtn.innerHTML = originalHTML;
+                    submitBtn.disabled = false;
+                }, 3000);
+            } else {
+                alert('There was an error sending your message. Please try again.');
                 submitBtn.innerHTML = originalHTML;
                 submitBtn.disabled = false;
-            }, 3000);
-        } else {
+            }
+        } catch (error) {
             alert('There was an error sending your message. Please try again.');
             submitBtn.innerHTML = originalHTML;
             submitBtn.disabled = false;
         }
-    } catch (error) {
-        alert('There was an error sending your message. Please try again.');
-        submitBtn.innerHTML = originalHTML;
-        submitBtn.disabled = false;
-    }
-});
+    });
+}
 
 document.querySelectorAll('.contact-method').forEach(method => {
     method.addEventListener('click', function (e) {
