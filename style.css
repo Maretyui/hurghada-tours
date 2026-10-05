@@ -691,6 +691,11 @@ body {
     box-shadow: 0 5px 15px rgba(44, 90, 160, 0.3);
 }
 
+.submit-btn:focus-visible {
+    outline: 3px solid #f1c40f;
+    outline-offset: 2px;
+}
+
 footer {
     background: #2c5a7a;
     color: white;
