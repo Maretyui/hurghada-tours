@@ -534,13 +534,6 @@ body {
     background: white;
 }
 
-.about-content {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 1rem;
-    text-align: center;
-}
-
 .contact-section {
     padding: 80px 0;
     background: #f8f9fa;
