@@ -126,6 +126,11 @@ body {
     color: white;
 }
 
+.call-btn:focus-visible {
+    outline: 3px solid #2c5a7a;
+    outline-offset: 2px;
+}
+
 /* Hidden by default (desktop) - only shown by the 768px media query below,
    since it exists purely to reach .nav-menu once that's hidden on mobile. */
 .nav-toggle {
