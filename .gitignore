@@ -1,0 +1,14 @@
+# OS cruft
+.DS_Store
+Thumbs.db
+
+# editor/IDE
+.vscode/
+.idea/
+
+# agent context
+/context
+/.impeccable
+CLAUDE.md
+AGENTS.md
+.claude/
