@@ -821,6 +821,11 @@ footer a {
     transform: scale(1.1);
 }
 
+.floating-call:focus-visible {
+    outline: 3px solid #2c5a7a;
+    outline-offset: 2px;
+}
+
 @media (max-width: 480px) {
     .nav-container {
         padding: .5rem 0;
